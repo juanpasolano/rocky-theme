@@ -1,0 +1,65 @@
+{{!< default}}
+
+<main class="main_rocky" role="main">
+
+	{{#post}}
+	<article class="article_rocky" role="article" itemscope itemtype="http://schema.org/Article">
+
+		<header>
+			{{#if author}}
+				<span class="author" itemprop="author">By: {{author.name}}</span>
+			{{/if}}
+			<h1 class="posttitle" itemprop="headline">{{title}}</h1>
+			<time class="date" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished"><span class="icon">&#128197;</span> {{date format='dddd DD MMM YYYY'}}</time>
+			{{#if tags}}
+			<div class="posttags">
+				<span class="icon">&#59273;</span>
+				Tags: {{tags separator=" | "}}
+			</div>
+			{{/if}}
+		</header>
+
+		<hr>
+
+		<div class="postcontent" itemprop="articleBody">
+			{{content}}
+		</div>
+		<hr>
+
+		<div class="sharepost row">
+				<h4 class="sharetitle">Share this post:</h4>
+				<a class="icon-social" target="_blank" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}">&#62218;</a>
+				<a class="icon-social" target="_blank" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}">&#62221;</a>
+				<a class="icon-social" target="_blank" href="https://plus.google.com/share?url={{url absolute="true"}}">&#62224;</a>
+		</div>
+
+		{{#if author}}
+		<hr>
+			<footer class="postfooter row">
+				<address itemscope itemtype="http://schema.org/Person">
+					<div class="column large-2 small-4">
+						{{#if author.image}}
+						<img src="{{author.image}}" itemprop="image" class="authorimage" />
+						{{/if}}
+					</div>
+					<div class="column large-10 small-8">
+						<h4 itemprop="author">{{author.name}}</h4>
+						{{#if author.website}}
+							<a href="{{author.website}}" itemprop="url">{{author.website}}</a>
+						{{/if}}
+						<p>{{author.bio}}</p>
+					</div>
+				</address>
+			</footer>
+		{{/if}}
+
+
+	</article>
+	{{/post}}
+	{{#if pagination}}
+	<div class="pagination_rocky">
+		{{{pagination}}}
+	</div>
+	{{/if}}
+
+</main>

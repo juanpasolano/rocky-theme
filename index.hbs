@@ -1,0 +1,43 @@
+{{!< default}}
+
+
+<div class="main_rocky" role="main">
+
+<div class="row" id="index_posts">
+	{{#foreach posts}}
+<article class="index_article_rocky" role="article" itemscope itemtype="http://schema.org/Article">
+	<a href="{{{url}}}" rel="bookmark">
+	<div class="postfeatured">
+
+	</div>
+	<header>
+		<h1 class="posttitle" itemprop="headline">{{title}}</h1>
+		<hr>
+	</header>
+		<time class="date" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished"><span class="icon">&#128197;</span> {{date format='dddd DD MMM YYYY'}}</time>
+	<div class="hidden postcontent">
+		{{content}}
+	</div>
+	{{#if tags}}
+	<div class="posttags">
+		<span class="icon">&#59273;</span>
+		Tags: {{tags separator=" | "}}
+	</div>
+	{{/if}}
+	</a>
+</article>
+
+<!--<hr>-->
+
+{{/foreach}}
+</div>
+
+<div class="row">
+{{#if pagination}}
+<div class="pagination_rocky">
+	{{pagination}}
+</div>
+{{/if}}
+</div>
+
+</div>
