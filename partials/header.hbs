@@ -3,7 +3,17 @@
 		<img class="logo" src="{{{@blog.logo}}}" alt="">
 		<h1 class="title">{{{@blog.title}}}</h1>
 	</a>
+
+
+
 	<p class="description">{{{@blog.description}}}</p>
+	<div class="pages">
+		<hr>
+		<a href="{{@blog.url}}/about">About</a>
+		<a href="{{@blog.url}}/contact">Contact</a>
+		<hr>
+	</div>
+
 	<div class="shareditems">
 		<a class="icon-social" target="_blank" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}">&#62218;</a>
 					<a class="icon-social" target="_blank" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}">&#62221;</a>
