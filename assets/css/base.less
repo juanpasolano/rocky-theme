@@ -242,8 +242,14 @@ input[type=submit]{
 		}
 	}
 }
-
 .article_rocky{
+	opacity: 0;
+	.transform(translate3d(0,1em, 0));
+	&.go-in{
+		.transition(all 800ms cubic-bezier(0.51, 0.01, 0.37, 0.98));
+		.transform(translate3d(0,0, 0));
+		opacity: 1;
+	}
 	p{
 		color: darken(@paragraphColor, 20%);
 	}
@@ -291,6 +297,13 @@ input[type=submit]{
 	}
 }
 .page_rocky{
+	opacity: 0;
+	.transform(translate3d(0,1em, 0));
+	&.go-in{
+		.transition(all 800ms cubic-bezier(0.51, 0.01, 0.37, 0.98));
+		.transform(translate3d(0,0, 0));
+		opacity: 1;
+	}
 	textarea{
 		height: 10em;
 	}

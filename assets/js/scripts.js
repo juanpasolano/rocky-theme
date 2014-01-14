@@ -14,31 +14,32 @@ $(document).ready(function(){
 				el.appendTo($(this).parents('.index_article_rocky').find('.postfeatured'));
 			});
 
-			/*Start animations*/
 
 			setTimeout(function(){
 
+				/*Fix footer for when little content*/
 				window.$footer_rocky = $('.footer_rocky');
 				var footerPosition = $footer_rocky.outerHeight() + $footer_rocky.offset().top;
 				if(footerPosition < $(window).height()){
 					$footer_rocky.addClass('fixed-bottom');
 				}
 
-
-				$('.sidebar_rocky .box').addClass('go-in');
-
+				/*Animation for posts at index*/
 				var showArticle = function(multiplier, el){
 					setTimeout(function(){
 						el.addClass('go-in');
 					},200*multiplier);
-				}
+				};
 
 				var $index_articles = $('.index_article_rocky');
 				for (var i = 0; i < $index_articles.length; i++) {
 					var el = $index_articles.eq(i);
 					showArticle(i, el);
-				};
+				}
 
-			},200)
+				/*Animation single post*/
+				$('.article_rocky, .page_rocky').addClass('go-in');
+
+			},200);
 
 		});
